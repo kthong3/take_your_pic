@@ -1,6 +1,8 @@
-<% @posts.each do |post| %>
-    <div class="post">
-      <br>
-      <%= post.content %>
-    </div>
-<% end %>
+<div class="post">
+  <div class="content">
+    <%= link_to post.content, post_path(post) %>
+  </div>
+  <div class="date">
+    post submitted on <%= post.created_at.strftime("%B %d, %Y") %>
+  </div>
+</div>
