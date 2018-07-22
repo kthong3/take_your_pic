@@ -1,0 +1,13 @@
+<div class="post">
+  <% if post.image.attached? %>
+    <div class="img">
+      <%= link_to image_tag(post.image.variant(resize: "400x400")), post_path(post) %>
+    </div>
+  <% end %>
+  <div class="content">
+    <%= post.content %>
+  </div>
+  <div class="date">
+    post submitted on <%= post.created_at.strftime("%B %d, %Y") %>
+  </div>
+</div>
