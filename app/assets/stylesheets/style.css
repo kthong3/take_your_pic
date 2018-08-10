@@ -1,0 +1,36 @@
+.header {
+  grid-area: header;
+  border: 5px solid blue;
+}
+.navbar {
+  grid-area: nav;
+  border: 5px solid purple;
+}
+.flash {
+  grid-area: flash;
+  border: 5px solid orange;
+}
+.content {
+  grid-area: content;
+  border: 5px dashed black;
+}
+
+.container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    "header"
+    "nav"
+    "flash"
+    "content";
+}
+
+img, embed, object, video {
+  max-width: 100%;
+}
+
+nav a, button {
+  min-width: 48px;
+  min-height: 48px;
+}
+
