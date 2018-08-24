@@ -1,4 +1,7 @@
-<h1>Sign Up</h1>
+<h1>sign up</h1>
+<div class="signup-text">
+  sign up to see photos and videos from your friends.
+</div>
 <div id="signup-form">
   <%= form_for @user do |f| %>
     <% if @user.errors.any? %>
@@ -29,11 +32,14 @@
       <%= f.password_field :password %>
     </div>
     <div class="field">
-      <%= f.label :password_confirmation %><b>
+      <%= f.label :password_confirmation %><br>
       <%= f.password_field :password_confirmation %>
     </div>
     <div class="actions">
       <%= f.submit "sign up" %>
     </div>
   <% end %>
+</div>
+<div class="account">
+  already have an account? <%= link_to "login", login_path %>
 </div>

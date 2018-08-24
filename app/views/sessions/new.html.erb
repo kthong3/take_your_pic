@@ -1,5 +1,4 @@
-<h1>Log In</h1>
-
+<h1>log in</h1>
 <div id="login-form">
   <%= form_tag login_path do %>
     <div class="field">
@@ -14,4 +13,7 @@
       <%= submit_tag "login" %>
     </div>
   <% end %>
+</div>
+<div class="account">
+  don't have an account? <%= link_to "sign up", signup_path %>
 </div>
