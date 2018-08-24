@@ -1,13 +1,15 @@
-<div class="img">
-  <%= image_tag @post.image.variant(resize: "540x540") %>
-</div>
-<div class="content">
-  <%= @post.content %>
-</div>
-<div class="date">
-  post submitted on <%= @post.created_at.strftime("%B %d, %Y").downcase %>
-</div>
-<div class="show-links">
-  <%= link_to "edit post", edit_post_path(@post) %> |
-  <%= link_to "delete post", post_path(@post), method: :delete, confirm: 'are you sure?' %>
+<div class="show-post">
+  <div class="img">
+    <%= image_tag @post.image.variant(resize: "540x540") %>
+  </div>
+  <div class="content">
+    <%= @post.creator.username %>: <%= @post.content %>
+  </div>
+  <div class="date">
+    <%= @post.created_at.strftime("%B %d, %Y").downcase %>
+  </div>
+  <div class="show-links">
+    <%= link_to "edit post", edit_post_path(@post) %> |
+    <%= link_to "delete post", post_path(@post), method: :delete, confirm: 'are you sure?' %>
+  </div>
 </div>
