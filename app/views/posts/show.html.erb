@@ -3,10 +3,10 @@
     <%= image_tag @post.image.variant(resize: "540x540") %>
   </div>
   <div class="content">
-    <%= @post.content %>
+    <%= @post.creator.username %>: <%= @post.content %>
   </div>
   <div class="date">
-    post submitted on <%= @post.created_at.strftime("%B %d, %Y").downcase %>
+    <%= @post.created_at.strftime("%B %d, %Y").downcase %>
   </div>
   <div class="show-links">
     <%= link_to "edit post", edit_post_path(@post) %> |

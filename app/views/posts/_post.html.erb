@@ -4,10 +4,10 @@
       <%= link_to image_tag(post.image), post_path(post) %>
     </div>
   <% end %>
-  <div class="date">
-    post submitted on <%= post.created_at.strftime("%B %d, %Y") %>
-  </div>
   <div class="content">
-    <%= post.content %>
+    <%= post.creator.username %>: <%= post.content %>
+  </div>
+  <div class="date">
+    <%= post.created_at.strftime("%B %d, %Y").downcase %>
   </div>
 </div>
