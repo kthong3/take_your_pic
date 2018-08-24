@@ -16,23 +16,16 @@
         <h1><%= link_to "takeyourpic", root_path %></h1>
       </header>
       <nav class="navbar">
-        <ul>
-          <% if logged_in? %>
+        <% if logged_in? %>
+          <ul>
             <li>
               <%= link_to "add new post", new_post_path %>
             </li>
             <li>
               <%= link_to "logout", logout_path, method: :delete %>
             </li>
-          <% else %>
-            <li>
-              <%= link_to "login", login_path %>
-            </li>
-            <li>
-              <%= link_to "sign up", signup_path %>
-            </li>
-          <% end %>
-        </ul>
+          </ul>
+        <% end %>
       </nav>
 
       <div class="flash">
