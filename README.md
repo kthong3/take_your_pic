@@ -3,7 +3,7 @@
 ## Project Description
 Photo-sharing application that allows users to upload photos. Users can add a caption to each of their posts and use hashtags  to make them searchable by other users within the app.
 
-## App Features
+## App Features (currently)
 - User creation
 - Upload photos with captions
 - View photos from other users
