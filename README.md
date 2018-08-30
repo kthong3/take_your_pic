@@ -9,9 +9,10 @@ Photo-sharing application that allows users to upload photos. Users can add a ca
 - View photos from other users
 
 ## Tech Stack 
-Ruby 2.5.0  
-Rails 5.1.4  
-Postgresql 10
+- Ruby 2.5.0  
+- Rails 5.1.4  
+- Postgresql 10
+- Amazon Web Services S3
 
 ## System Requirements to Run Locally
 Must have on your machine:
