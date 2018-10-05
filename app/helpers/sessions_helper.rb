@@ -11,8 +11,12 @@ module SessionsHelper
     !current_user.nil?
   end
 
-  def authorize
-    redirect_to root_path if current_user.nil?
+  def authorize!(user)
+    redirect_to root_path unless authorized?(user)
+  end
+
+  def authorized?(user)
+    current_user == user
   end
 
   def require_login
@@ -21,9 +25,9 @@ module SessionsHelper
     end
   end
 
-  def require_login
-    unless current_user
-      redirect_to login_url
-    end
+  def find_and_ensure_entry(id)
+    post = Post.find_by(id: id)
+    not_found if post.nil?
+    post
   end
 end

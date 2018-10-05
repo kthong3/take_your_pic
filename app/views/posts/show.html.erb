@@ -8,8 +8,11 @@
   <div class="date">
     <%= @post.created_at.strftime("%B %d, %Y").downcase %>
   </div>
-  <div class="show-links">
-    <%= link_to "edit post", edit_post_path(@post) %> |
-    <%= link_to "delete post", post_path(@post), method: :delete, confirm: 'are you sure?' %>
-  </div>
+
+  <% if authorized?(@post.creator) %>
+    <div class="show-links">
+      <%= link_to "edit post", edit_post_path(@post) %> |
+      <%= link_to "delete post", post_path(@post), method: :delete, confirm: 'are you sure?' %>
+    </div>
+  <% end %>
 </div>

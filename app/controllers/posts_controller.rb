@@ -24,9 +24,11 @@ class PostsController < ApplicationController
   end
 
   def edit
+    authorize!(@post.creator)
   end
 
   def update
+    authorize!(@post.creator)
     if @post.update(post_params)
       redirect_to post_url, notice: 'post was updated.'
     else
@@ -35,13 +37,14 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    authorize!(@post.creator)
     @post.destroy
     redirect_to posts_url, notice: 'post was successfully deleted.'
   end
 
   private
   def set_post
-    @post = Post.find(params[:id])
+    @post = find_and_ensure_entry(params[:id])
   end
 
   def post_params
