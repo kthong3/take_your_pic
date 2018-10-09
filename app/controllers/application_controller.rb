@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
-  before_action :require_login
+  # before_action :require_login
 
   def not_found
       raise ActionController::RoutingError.new('Not Found')
