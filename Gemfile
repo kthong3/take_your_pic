@@ -35,7 +35,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'capybara'
 gem 'mini_magick', '~> 4.8'
-gem 'aws-sdk-s3'
+gem 'aws-sdk-s3', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
